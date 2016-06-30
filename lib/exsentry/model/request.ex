@@ -42,6 +42,7 @@ defmodule ExSentry.Model.Request do
   end
 
   @spec format_ip(tuple | String.t) :: String.t
+  defp format_ip(nil), do: "n/a"
   defp format_ip(ip) when is_binary(ip), do: ip
   defp format_ip({a, b, c, d}), do: "#{a}.#{b}.#{c}.#{d}"
 
